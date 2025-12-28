@@ -1,22 +1,18 @@
-# PulseFit Gym Website
+# FitForm Fuel & Training Guide
 
-A modern, fully responsive fitness and gym website built with HTML5, Tailwind CSS,
-and vanilla JavaScript. This static site is ready for deployment on GitHub Pages.
+A simple fitness site that calculates daily calorie needs and lists exercises for
+specific muscle groups.
 
-## Features
-- Sticky navigation with an off-canvas mobile menu.
-- Hero, About, Classes, Trainers, Membership, and Contact sections.
-- Responsive layouts using Tailwind CSS utility classes.
-- Smooth scrolling, mobile menu toggle, and contact form validation.
-- Embedded Google Map and frontend-only contact form.
+## What it does
+- Calculates BMR and maintenance calories using the Mifflin-St Jeor formula.
+- Provides exercise recommendations by muscle group.
+- Includes beginner-friendly fitness tips.
 
-## Run locally
-1. Open `index.html` in your browser, or
-2. Serve the directory with a static server:
-   ```bash
-   python -m http.server 8000
-   ```
+## How to use
+1. Open `index.html` in your browser.
+2. Enter your age, height, weight, sex, and activity level.
+3. Choose a muscle group to see exercise ideas.
 
-## Notes
-- The contact form is frontend-only; connect a backend for real submissions.
-- Tailwind is loaded via CDN for quick setup.
+## Customize
+- Update `script.js` to add more exercises or adjust formulas.
+- Edit `styles.css` to change the look and feel.
