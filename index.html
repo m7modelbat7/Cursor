@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitForm Fuel & Training Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <span class="hero__tag">Your first fitness toolkit</span>
+        <h1>FitForm Fuel & Training Guide</h1>
+        <p>
+          Calculate daily calories for your goals and discover exercises for each
+          muscle group.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="calculator">
+        <h2>Daily Calorie Calculator</h2>
+        <p class="subtitle">
+          Uses the Mifflin-St Jeor equation with activity multipliers.
+        </p>
+        <form id="calorie-form">
+          <div class="grid">
+            <label>
+              Age
+              <input type="number" id="age" min="10" max="100" required />
+            </label>
+            <label>
+              Sex
+              <select id="sex" required>
+                <option value="">Select</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+            </label>
+            <label>
+              Height (cm)
+              <input type="number" id="height" min="120" max="230" required />
+            </label>
+            <label>
+              Weight (kg)
+              <input type="number" id="weight" min="35" max="200" required />
+            </label>
+            <label>
+              Activity Level
+              <select id="activity" required>
+                <option value="">Select</option>
+                <option value="1.2">Sedentary (little exercise)</option>
+                <option value="1.375">Light (1-3 days/week)</option>
+                <option value="1.55">Moderate (3-5 days/week)</option>
+                <option value="1.725">Active (6-7 days/week)</option>
+                <option value="1.9">Athlete (intense daily)</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit">Calculate Calories</button>
+            <button type="reset" class="ghost">Reset</button>
+          </div>
+        </form>
+
+        <div class="results" id="results" aria-live="polite"></div>
+      </section>
+
+      <section class="card" id="training">
+        <h2>Exercise Finder by Muscle</h2>
+        <p class="subtitle">
+          Choose a muscle group and get a recommended exercise list.
+        </p>
+        <div class="exercise-grid">
+          <label>
+            Muscle Group
+            <select id="muscle-select">
+              <option value="">Select a muscle group</option>
+            </select>
+          </label>
+          <div class="exercise-list" id="exercise-list">
+            <p>Select a muscle group to see exercises.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="tips">
+        <h2>Quick Fitness Tips</h2>
+        <ul class="tips">
+          <li>Warm up for 5-10 minutes before training.</li>
+          <li>Prioritize good form over heavy weight.</li>
+          <li>Sleep 7-9 hours to support recovery.</li>
+          <li>Hydrate throughout the day.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Built as your first fitness repo. Adjust the exercises and formulas as
+        needed.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

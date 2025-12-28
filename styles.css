@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  --primary: #1b5b4b;
+  --accent: #e58f2a;
+  --bg: #f4f7f5;
+  --card: #ffffff;
+  --text: #1b1f1d;
+  --muted: #5a6a63;
+  --border: #d9e1dd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hero {
+  background: linear-gradient(120deg, #0f2f27, #1b5b4b);
+  color: #ffffff;
+  padding: 4rem 6vw 3rem;
+}
+
+.hero__content {
+  max-width: 900px;
+}
+
+.hero__tag {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: -2rem auto 4rem;
+  padding: 0 6vw;
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 24px 50px rgba(22, 41, 36, 0.12);
+  border: 1px solid var(--border);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: -0.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.results {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background: #f0f6f3;
+  border: 1px dashed var(--border);
+  color: var(--text);
+}
+
+.results h3 {
+  margin-top: 0;
+}
+
+.exercise-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+}
+
+.exercise-list {
+  background: #f9faf9;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border);
+  min-height: 140px;
+}
+
+.exercise-list ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.tips {
+  margin: 0;
+  padding-left: 1.3rem;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 720px) {
+  .exercise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3rem 6vw;
+  }
+}
