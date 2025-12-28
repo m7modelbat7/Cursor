@@ -10,6 +10,17 @@
     <header class="hero">
       <div class="hero__content">
         <div class="hero__top">
+          <div class="brand">
+            <span class="hero__tag">Your first fitness toolkit</span>
+            <span class="brand__name">FitForm</span>
+          </div>
+          <nav class="primary-nav" aria-label="Primary">
+            <a href="#calculator">Calculator</a>
+            <a href="#programs">Programs</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </nav>
           <span class="hero__tag">Your first fitness toolkit</span>
           <button
             class="menu-toggle"
@@ -20,6 +31,41 @@
           >
             Menu
           </button>
+        </div>
+        <div class="hero__layout">
+          <div class="hero__copy">
+            <h1>FitForm Fuel & Training Guide</h1>
+            <p>
+              Build a smarter routine with guided training plans, macro-focused
+              nutrition tips, and a supportive community.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#calculator">Start calculating</a>
+              <a class="button button--ghost" href="#programs"
+                >Explore programs</a
+              >
+            </div>
+            <div class="hero__stats">
+              <div>
+                <strong>45k+</strong>
+                <span>Active members</span>
+              </div>
+              <div>
+                <strong>120+</strong>
+                <span>Guided workouts</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Average rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=80"
+              alt="Trainer guiding a client during a workout"
+            />
+          </div>
         </div>
         <h1>FitForm Fuel & Training Guide</h1>
         <p>
@@ -33,6 +79,10 @@
     <nav id="mobile-menu" class="mobile-menu hidden" aria-hidden="true">
       <button class="menu-close" id="menu-close" type="button">Close</button>
       <a href="#calculator">Calorie calculator</a>
+      <a href="#programs">Training programs</a>
+      <a href="#gallery">Transformation gallery</a>
+      <a href="#pricing">Memberships</a>
+      <a href="#contact">Contact</a>
       <a href="#training">Exercise finder</a>
       <a href="#tips">Quick tips</a>
     </nav>
@@ -86,6 +136,79 @@
         <div class="results" id="results" aria-live="polite"></div>
       </section>
 
+      <section class="card" id="programs">
+        <div class="section-heading">
+          <div>
+            <h2>Programs built around your goals</h2>
+            <p class="subtitle">
+              Strength, endurance, and mobility plans tailored to your schedule.
+            </p>
+          </div>
+          <a class="button button--ghost" href="#pricing">See memberships</a>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80"
+              alt="Woman lifting weights in a gym"
+            />
+            <h3>Strength Blueprint</h3>
+            <p>
+              Progressive splits and video form checks to help you lift heavier
+              with confidence.
+            </p>
+          </article>
+          <article class="program-card">
+            <img
+              src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=80"
+              alt="Runners training outdoors"
+            />
+            <h3>Endurance Boost</h3>
+            <p>
+              Interval-based sessions and recovery guides for faster mile times
+              and lasting energy.
+            </p>
+          </article>
+          <article class="program-card">
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+              alt="Trainer helping with a stretch"
+            />
+            <h3>Mobility Reset</h3>
+            <p>
+              Daily mobility flows and flexibility coaching to keep you moving
+              pain-free.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="gallery">
+        <h2>Real transformations</h2>
+        <p class="subtitle">
+          Stories from members who improved their energy, strength, and
+          confidence.
+        </p>
+        <div class="gallery-grid">
+          <img
+            src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=600&q=80"
+            alt="Athlete doing a kettlebell workout"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=600&q=80"
+            alt="Personal training session in a studio"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80"
+            alt="Yoga stretch on a mat"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
+            alt="Weightlifting session with barbells"
+          />
+        </div>
+      </section>
+
       <section class="card" id="training">
         <h2>Exercise Finder by Muscle</h2>
         <p class="subtitle">
@@ -113,13 +236,118 @@
           <li>Hydrate throughout the day.</li>
         </ul>
       </section>
+
+      <section class="card" id="testimonials">
+        <h2>Trusted by busy professionals</h2>
+        <div class="testimonial-grid">
+          <article>
+            <p>
+              “FitForm helped me rebuild my routine after a long break. The
+              pacing and check-ins kept me on track.”
+            </p>
+            <div class="testimonial-meta">
+              <span>Jordan M.</span>
+              <span>Marketing Lead</span>
+            </div>
+          </article>
+          <article>
+            <p>
+              “The calorie calculator and meal timing tips made nutrition feel
+              simple. I finally have energy for my workouts.”
+            </p>
+            <div class="testimonial-meta">
+              <span>Priya S.</span>
+              <span>Product Designer</span>
+            </div>
+          </article>
+          <article>
+            <p>
+              “I travel constantly, so the 30-minute strength circuits are a
+              lifesaver.”
+            </p>
+            <div class="testimonial-meta">
+              <span>Marcus L.</span>
+              <span>Consultant</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="pricing">
+        <h2>Memberships</h2>
+        <p class="subtitle">
+          Flexible options to match every fitness journey.
+        </p>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3>Starter</h3>
+            <p class="price">$19<span>/mo</span></p>
+            <ul>
+              <li>Weekly workout plans</li>
+              <li>Macro calculator access</li>
+              <li>Community support</li>
+            </ul>
+            <button type="button">Choose Starter</button>
+          </article>
+          <article class="pricing-card featured">
+            <h3>Momentum</h3>
+            <p class="price">$39<span>/mo</span></p>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>Coach check-ins</li>
+              <li>Meal planning guides</li>
+            </ul>
+            <button type="button">Choose Momentum</button>
+          </article>
+          <article class="pricing-card">
+            <h3>Elite</h3>
+            <p class="price">$69<span>/mo</span></p>
+            <ul>
+              <li>1:1 coaching calls</li>
+              <li>Form review videos</li>
+              <li>Priority support</li>
+            </ul>
+            <button type="button">Choose Elite</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="contact">
+        <div class="contact-grid">
+          <div>
+            <h2>Stay in the loop</h2>
+            <p class="subtitle">
+              Get weekly training tips, meal prep ideas, and new program
+              announcements.
+            </p>
+          </div>
+          <form class="contact-form">
+            <label>
+              Email address
+              <input type="email" placeholder="you@email.com" required />
+            </label>
+            <button type="submit">Join the newsletter</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <p>
-        Built as your first fitness repo. Adjust the exercises and formulas as
-        needed.
-      </p>
+      <div class="footer__content">
+        <div>
+          <strong>FitForm</strong>
+          <p>Elevate your training with mindful nutrition.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#programs">Programs</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div class="footer__links">
+          <span>hello@fitform.co</span>
+          <span>+1 (555) 202-2040</span>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
