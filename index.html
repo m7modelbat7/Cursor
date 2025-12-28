@@ -9,7 +9,18 @@
   <body>
     <header class="hero">
       <div class="hero__content">
-        <span class="hero__tag">Your first fitness toolkit</span>
+        <div class="hero__top">
+          <span class="hero__tag">Your first fitness toolkit</span>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            Menu
+          </button>
+        </div>
         <h1>FitForm Fuel & Training Guide</h1>
         <p>
           Calculate daily calories for your goals and discover exercises for each
@@ -17,6 +28,14 @@
         </p>
       </div>
     </header>
+    <div id="menu-overlay" class="menu-overlay hidden"></div>
+
+    <nav id="mobile-menu" class="mobile-menu hidden" aria-hidden="true">
+      <button class="menu-close" id="menu-close" type="button">Close</button>
+      <a href="#calculator">Calorie calculator</a>
+      <a href="#training">Exercise finder</a>
+      <a href="#tips">Quick tips</a>
+    </nav>
 
     <main>
       <section class="card" id="calculator">

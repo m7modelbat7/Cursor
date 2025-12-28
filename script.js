@@ -2,6 +2,10 @@ const calorieForm = document.querySelector("#calorie-form");
 const results = document.querySelector("#results");
 const muscleSelect = document.querySelector("#muscle-select");
 const exerciseList = document.querySelector("#exercise-list");
+const menuToggle = document.querySelector("#menu-toggle");
+const menuOverlay = document.querySelector("#menu-overlay");
+const mobileMenu = document.querySelector("#mobile-menu");
+const menuClose = document.querySelector("#menu-close");
 
 const exerciseLibrary = {
   Chest: [
@@ -49,6 +53,26 @@ const activityDescriptions = {
   1.55: "Moderately active",
   1.725: "Very active",
   1.9: "Athlete",
+};
+
+let previousBodyOverflow = "";
+
+const setMenuState = (isOpen) => {
+  if (!menuToggle || !menuOverlay || !mobileMenu) {
+    return;
+  }
+
+  menuOverlay.classList.toggle("hidden", !isOpen);
+  mobileMenu.classList.toggle("hidden", !isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+
+  if (isOpen) {
+    previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = previousBodyOverflow;
+  }
 };
 
 const buildExerciseOptions = () => {
@@ -135,6 +159,29 @@ calorieForm.addEventListener("reset", () => {
 muscleSelect.addEventListener("change", (event) => {
   renderExercises(event.target.value);
 });
+
+if (menuToggle && menuOverlay && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.contains("hidden");
+    setMenuState(isOpen);
+  });
+
+  menuOverlay.addEventListener("click", () => {
+    setMenuState(false);
+  });
+
+  if (menuClose) {
+    menuClose.addEventListener("click", () => {
+      setMenuState(false);
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+      setMenuState(false);
+    }
+  });
+}
 
 buildExerciseOptions();
 renderExercises("");
