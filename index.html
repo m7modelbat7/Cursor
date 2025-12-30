@@ -3,26 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FitForm Fuel & Training Guide</title>
+    <title>FitForm Training Studio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="hero">
-      <div class="hero__content">
-        <span class="hero__tag">Your first fitness toolkit</span>
-        <h1>FitForm Fuel & Training Guide</h1>
-        <p>
-          Calculate daily calories for your goals and discover exercises for each
-          muscle group.
-        </p>
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="eyebrow">Fitness made simple</span>
+          <h1>FitForm Training Studio</h1>
+          <p>
+            A streamlined approach to training and nutrition. Use our calculator,
+            explore exercises, and build a routine that fits your schedule.
+          </p>
+          <div class="hero__actions">
+            <a class="button" href="#calculator">Start now</a>
+            <a class="button button--ghost" href="#contact">Talk to a coach</a>
+          </div>
+          <div class="hero__meta">
+            <div>
+              <strong>Personalized plans</strong>
+              <span>Tailored to your goals</span>
+            </div>
+            <div>
+              <strong>Weekly check-ins</strong>
+              <span>Stay accountable</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80"
+            alt="Athlete lifting weights"
+          />
+        </div>
       </div>
     </header>
 
-    <main>
+    <main class="container">
       <section class="card" id="calculator">
         <h2>Daily Calorie Calculator</h2>
         <p class="subtitle">
-          Uses the Mifflin-St Jeor equation with activity multipliers.
+          Estimate your maintenance calories to plan your next nutrition step.
         </p>
         <form id="calorie-form">
           <div class="grid">
@@ -50,11 +72,11 @@
               Activity Level
               <select id="activity" required>
                 <option value="">Select</option>
-                <option value="1.2">Sedentary (little exercise)</option>
+                <option value="1.2">Sedentary</option>
                 <option value="1.375">Light (1-3 days/week)</option>
                 <option value="1.55">Moderate (3-5 days/week)</option>
                 <option value="1.725">Active (6-7 days/week)</option>
-                <option value="1.9">Athlete (intense daily)</option>
+                <option value="1.9">Athlete</option>
               </select>
             </label>
           </div>
@@ -63,14 +85,13 @@
             <button type="reset" class="ghost">Reset</button>
           </div>
         </form>
-
         <div class="results" id="results" aria-live="polite"></div>
       </section>
 
       <section class="card" id="training">
-        <h2>Exercise Finder by Muscle</h2>
+        <h2>Exercise Finder</h2>
         <p class="subtitle">
-          Choose a muscle group and get a recommended exercise list.
+          Pick a muscle group to view a focused exercise list.
         </p>
         <div class="exercise-grid">
           <label>
@@ -85,22 +106,54 @@
         </div>
       </section>
 
-      <section class="card" id="tips">
-        <h2>Quick Fitness Tips</h2>
-        <ul class="tips">
-          <li>Warm up for 5-10 minutes before training.</li>
-          <li>Prioritize good form over heavy weight.</li>
-          <li>Sleep 7-9 hours to support recovery.</li>
-          <li>Hydrate throughout the day.</li>
-        </ul>
+      <section class="card" id="highlights">
+        <h2>Why FitForm</h2>
+        <div class="highlights">
+          <article>
+            <h3>Clear weekly guidance</h3>
+            <p>Follow a focused plan with simple weekly goals and reminders.</p>
+          </article>
+          <article>
+            <h3>Evidence-based coaching</h3>
+            <p>Training and nutrition advice grounded in practical science.</p>
+          </article>
+          <article>
+            <h3>Support when you need it</h3>
+            <p>Quick check-ins and messaging keep you on track.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="contact">
+        <div class="contact">
+          <div>
+            <h2>Ready to build your routine?</h2>
+            <p class="subtitle">
+              Share your email and we will send a starter plan within 24 hours.
+            </p>
+          </div>
+          <form class="contact-form">
+            <label>
+              Email address
+              <input type="email" placeholder="you@email.com" required />
+            </label>
+            <button type="submit">Request a plan</button>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>
-        Built as your first fitness repo. Adjust the exercises and formulas as
-        needed.
-      </p>
+      <div class="container footer">
+        <div>
+          <strong>FitForm Training Studio</strong>
+          <p>Minimalist coaching for real-world schedules.</p>
+        </div>
+        <div class="footer__links">
+          <span>hello@fitform.co</span>
+          <span>+1 (555) 202-2040</span>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

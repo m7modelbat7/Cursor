@@ -2,12 +2,14 @@
   color-scheme: light;
   font-family: "Inter", "Segoe UI", sans-serif;
   --primary: #1b5b4b;
+  --primary-dark: #0f2f27;
   --accent: #e58f2a;
   --bg: #f4f7f5;
   --card: #ffffff;
   --text: #1b1f1d;
   --muted: #5a6a63;
   --border: #d9e1dd;
+  --shadow: 0 20px 40px rgba(22, 41, 36, 0.12);
 }
 
 * {
@@ -18,45 +20,88 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 1.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1100px, 100% - 12vw);
+  margin: 0 auto;
 }
 
 .hero {
-  background: linear-gradient(120deg, #0f2f27, #1b5b4b);
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary));
   color: #ffffff;
-  padding: 4rem 6vw 3rem;
+  padding: 3.5rem 0 4.5rem;
 }
 
 .hero__content {
-  max-width: 900px;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
 }
 
-.hero__tag {
-  display: inline-block;
+.eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.hero__text h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(2.4rem, 3vw, 3.4rem);
+}
+
+.hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__meta {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero__meta strong {
+  display: block;
+}
+
+.hero__meta span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
 }
 
 main {
-  max-width: 1000px;
-  margin: -2rem auto 4rem;
-  padding: 0 6vw;
+  padding: 3rem 0 4rem;
   display: grid;
   gap: 2rem;
 }
 
 .card {
   background: var(--card);
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 24px 50px rgba(22, 41, 36, 0.12);
+  box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
 
 .subtitle {
   color: var(--muted);
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
 }
 
 .grid {
@@ -79,14 +124,8 @@ select {
   font-size: 1rem;
 }
 
-.actions {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-button {
+button,
+.button {
   border: none;
   border-radius: 999px;
   padding: 0.75rem 1.5rem;
@@ -94,12 +133,25 @@ button {
   cursor: pointer;
   background: var(--primary);
   color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-button.ghost {
+button.ghost,
+.button--ghost {
   background: transparent;
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .results {
@@ -109,10 +161,6 @@ button.ghost {
   background: #f0f6f3;
   border: 1px dashed var(--border);
   color: var(--text);
-}
-
-.results h3 {
-  margin-top: 0;
 }
 
 .exercise-grid {
@@ -134,24 +182,71 @@ button.ghost {
   padding-left: 1.2rem;
 }
 
-.tips {
-  margin: 0;
-  padding-left: 1.3rem;
-  color: var(--muted);
+.highlights {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.highlights article {
+  background: #f7faf8;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.contact {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
 }
 
 footer {
-  text-align: center;
-  color: var(--muted);
-  padding-bottom: 3rem;
+  background: #0f2f27;
+  color: #ffffff;
+  padding: 2.5rem 0 3rem;
 }
 
-@media (max-width: 720px) {
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer__links {
+  display: grid;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: min(100%, 88vw);
+  }
+
   .exercise-grid {
     grid-template-columns: 1fr;
   }
 
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+  }
+
   .hero {
-    padding: 3rem 6vw;
+    padding: 3rem 0 3.5rem;
   }
 }

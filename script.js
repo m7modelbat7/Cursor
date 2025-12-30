@@ -16,31 +16,16 @@ const exerciseLibrary = {
     "Lat pulldowns",
     "Single-arm dumbbell rows",
   ],
-  Legs: [
-    "Squats",
-    "Romanian deadlifts",
-    "Lunges",
-    "Leg press",
-  ],
+  Legs: ["Squats", "Romanian deadlifts", "Lunges", "Leg press"],
   Shoulders: [
     "Overhead press",
     "Lateral raises",
     "Face pulls",
     "Arnold press",
   ],
-  Arms: [
-    "Bicep curls",
-    "Tricep dips",
-    "Hammer curls",
-    "Tricep rope pushdowns",
-  ],
+  Arms: ["Bicep curls", "Tricep dips", "Hammer curls", "Tricep rope pushdowns"],
   Core: ["Planks", "Dead bugs", "Russian twists", "Hanging leg raises"],
-  Glutes: [
-    "Hip thrusts",
-    "Glute bridges",
-    "Cable kickbacks",
-    "Step-ups",
-  ],
+  Glutes: ["Hip thrusts", "Glute bridges", "Cable kickbacks", "Step-ups"],
 };
 
 const activityDescriptions = {
@@ -52,6 +37,10 @@ const activityDescriptions = {
 };
 
 const buildExerciseOptions = () => {
+  if (!muscleSelect) {
+    return;
+  }
+
   Object.keys(exerciseLibrary).forEach((muscle) => {
     const option = document.createElement("option");
     option.value = muscle;
@@ -61,6 +50,10 @@ const buildExerciseOptions = () => {
 };
 
 const renderExercises = (muscle) => {
+  if (!exerciseList) {
+    return;
+  }
+
   if (!muscle || !exerciseLibrary[muscle]) {
     exerciseList.innerHTML = "<p>Select a muscle group to see exercises.</p>";
     return;
@@ -88,6 +81,10 @@ const calculateCalories = ({ age, sex, height, weight, activity }) => {
 const formatNumber = (value) => Math.round(value).toLocaleString();
 
 const renderResults = ({ bmr, tdee, activity }) => {
+  if (!results) {
+    return;
+  }
+
   results.innerHTML = `
     <h3>Your Results</h3>
     <p><strong>Basal Metabolic Rate (BMR):</strong> ${formatNumber(
@@ -103,38 +100,42 @@ const renderResults = ({ bmr, tdee, activity }) => {
   `;
 };
 
-calorieForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (calorieForm) {
+  calorieForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const age = Number(document.querySelector("#age").value);
-  const sex = document.querySelector("#sex").value;
-  const height = Number(document.querySelector("#height").value);
-  const weight = Number(document.querySelector("#weight").value);
-  const activity = Number(document.querySelector("#activity").value);
+    const age = Number(document.querySelector("#age").value);
+    const sex = document.querySelector("#sex").value;
+    const height = Number(document.querySelector("#height").value);
+    const weight = Number(document.querySelector("#weight").value);
+    const activity = Number(document.querySelector("#activity").value);
 
-  if (!age || !sex || !height || !weight || !activity) {
-    results.textContent = "Please complete every field to see results.";
-    return;
-  }
+    if (!age || !sex || !height || !weight || !activity) {
+      results.textContent = "Please complete every field to see results.";
+      return;
+    }
 
-  const calculation = calculateCalories({
-    age,
-    sex,
-    height,
-    weight,
-    activity,
+    const calculation = calculateCalories({
+      age,
+      sex,
+      height,
+      weight,
+      activity,
+    });
+
+    renderResults({ ...calculation, activity });
   });
 
-  renderResults({ ...calculation, activity });
-});
+  calorieForm.addEventListener("reset", () => {
+    results.textContent = "";
+  });
+}
 
-calorieForm.addEventListener("reset", () => {
-  results.textContent = "";
-});
-
-muscleSelect.addEventListener("change", (event) => {
-  renderExercises(event.target.value);
-});
+if (muscleSelect) {
+  muscleSelect.addEventListener("change", (event) => {
+    renderExercises(event.target.value);
+  });
+}
 
 buildExerciseOptions();
 renderExercises("");
