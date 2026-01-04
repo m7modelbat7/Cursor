@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehicle Tracking Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar container">
+    <h1>Vehicle Tracking Dashboard</h1>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Fleet stats">
+      <div class="stat-card">
+        <div class="stat-label">Total</div>
+        <div id="stats-total" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active</div>
+        <div id="stats-active" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Idle</div>
+        <div id="stats-idle" class="stat-value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Offline</div>
+        <div id="stats-offline" class="stat-value">0</div>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Filters">
+      <input id="search" type="search" placeholder="Search by vehicle or driver" />
+      <select id="filterStatus" aria-label="Filter by status">
+        <option value="all">All statuses</option>
+        <option value="moving">Moving</option>
+        <option value="idle">Idle</option>
+        <option value="offline">Offline</option>
+      </select>
+      <button id="refresh" type="button" title="Refresh data">Refresh</button>
+      <label class="toggle"><input type="checkbox" id="toggleRoutes" checked /> Show routes (last hour)</label>
+    </section>
+
+    <section class="layout">
+      <section class="panel">
+        <header class="panel-header">
+          <h3>Map</h3>
+          <small>Last hour routes</small>
+        </header>
+        <div id="map" class="map" role="img" aria-label="Vehicle locations">
+          <canvas id="map-canvas" class="map-canvas" aria-hidden="true"></canvas>
+        </div>
+      </section>
+
+      <section class="panel">
+        <header class="panel-header">
+          <h3>Vehicles</h3>
+          <small id="vehicles-count">0 items</small>
+        </header>
+        <div class="table-wrap">
+          <table class="table" aria-label="Vehicles table">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Driver</th>
+                <th>Status</th>
+                <th>Speed</th>
+                <th>Location</th>
+                <th>Last Update</th>
+              </tr>
+            </thead>
+            <tbody id="vehicles-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© 2025 Vehicle Tracking Dashboard</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
